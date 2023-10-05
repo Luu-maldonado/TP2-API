@@ -17,10 +17,10 @@ import org.hibernate.envers.Audited;
 @AllArgsConstructor
 @Audited
 public class Autor extends Base{
-    @Column(name = "Nombre")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "Apellido")
+    @Column(name = "apellido")
     private String apellido;
-    @Column(name = "Biografia", length = 1500)
+    @Column(name = "biografia", length = 1500)
     private String biografia;
 }

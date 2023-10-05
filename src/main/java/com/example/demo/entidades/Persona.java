@@ -20,20 +20,18 @@ import java.util.List;
 @Audited
 public class Persona extends Base {
 
-
-
-    @Column(name = "nombrePersona")
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "apellidoPersona")
+    @Column(name = "apellido")
     private String apellido;
-    @Column(name = "dniPersona")
+    @Column(name = "dni")
     private int dni;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
 
-    //el orphanremoval basicamente es la composicion, si eliminamos la persona eliminamos el libro
+    //el orphanremoval basicamente es la composicion, si eliminamos la persona tambien eliminamos el libro que le pertenece a esa persona
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
             name = "PersonaLibro",
